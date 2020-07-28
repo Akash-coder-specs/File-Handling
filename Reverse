@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<string.h>
+
+main()
+{
+	FILE *fp;
+	fp=fopen("newfile.txt","w");
+	char ch[100]="My Caption";
+	fprintf(fp,"%s",ch);
+	printf("\nInput to the reverse fuction is:%s\n",ch);
+	fclose(fp);
+	fp=fopen("newfile.txt","r");
+	fscanf(fp,"%[^\n]%s",ch);
+	strrev(ch);
+	printf("\nthe output for that reverse function is:%s\n",ch);
+	fclose(fp);
+}
